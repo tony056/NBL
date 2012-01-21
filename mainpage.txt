@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charest=utf-8">
+		<style type="text/css">
+		#NBLHeader{
+			width:700px;height30px;
+		}
+		#NBLHeader ul{
+			list-style-type:none;
+			margin:0;padding:0;
+			overflow:auto;
+		}
+		* html #NBLHeader ul{
+			height:30px;
+		}
+		#NBLHeader ul li{
+			float:left;
+		}
+		* html #NBLHeader ul li{
+			display:inline;
+		}
+		#NBLHeader ul li a{
+			display:block;
+			float:left;
+			height:23px;
+			padding:7px 10px 0 10px;
+		}
+		#NBLHeader ul li ul{
+			position:absolute;
+			width:150px;
+			overfloat:visible;
+			clear:left;
+			margin:30px 0 0 0;
+		}
+		#NBLHeader ul li ul li{
+			width:150px;
+			float:none;
+		}
+		#NBLHeader ul li ul li a{
+			float:none;
+		}
+		#NBLHeader ul li ul li ul{
+			margin:-30px 0 0 150px;
+		}
+		#NBLHeader ul li ul li ul li{
+		}
+		#NBLHeader ul li ul li ul li a{
+		}
+		#NBLHeader ul li ul{
+			visibility:hidden;
+		}
+		#NBLHeader ul li:hover ul{
+			visibility:visible;
+		}
+		#NBLHeader ul li:hover ul li ul{
+			visibility:hidden;
+		}
+		#NBLHeader ul li ul li:hover ul{
+			visibility:visible;
+		}
+		#NBLHeader ul li ul li:hover ul li ul{
+			visibility:hidden;
+		}
+		#NBLHeader ul li ul li ul li:hover ul{
+			visibility:visible;
+		}
+		#NBLHeader{
+			font-size:12px;
+			font-family:'tahoma';
+		}
+		#NBLHeader ul{
+			background:#6f6f6f;
+			border-right:1px #5f5f5f solid;
+			border-bottom:1px #5f5f5f solid;
+		}
+		#NBLHeader ul li a{
+			color:#cccccc;
+			text-decoration:none;
+			font-weight:bold;
+		}
+		#NBLHeader ul li ul{
+			background:#efefef;
+			border-right:1px #dfdfdf solid;
+			border-bottom:1px #dfdfdf solid;
+		}
+		#NBLHeader ul li ul li a{
+			font-size:11px;
+			color:#333333;
+			font-weight:normal;
+			text-decoration:none;
+		}
+		#NBLHeader ul li:hover,#NBLHeader ul li a:hover{
+			background:#efefef;
+		}
+		#NBLHeader ul li:hover a{
+			color:#333333;
+		}
+		#NBLHeader ul li ul li:hover,#NBLHeader ul li ul li a:hover{
+			background:#dfdfdf;
+		}
+		</style>		
+		<title>nbl.appspot.com</title>
+	</head>
+	<body>
+	 <script type="text/javascript" src="judge.txt"></script>
+		<div id = "NBLHeader">
+			<ul>
+				<li>
+					<a href="/score">SCORES & SCHEDULES</a>
+				</li>
+				
+				<li>
+					
+					<a href="/players">PLAYERS</a>
+					<div id="NBLplayer">
+					<ul>
+						<li>
+							<a href="/player/players">Players</a>
+						</li>
+						<li>
+							<a href="/player/teamroster">Team Roster</a>
+						</li>
+						
+					</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/standings">STANDINGS</a>
+					<div id="NBLstanding">
+					<ul>
+						<li>
+							<a href="/standings/nowstanding">Now Standing</a>
+						</li>
+						<li>
+							<a href="/standings/teamrecord">Team Record</a>
+						</li>
+						<li>
+							<a href="/standings/streaksandlast">Streak and Last 5</a>
+						</li>
+						<li>
+							<a href="/standings/lastsemester">Last Semester Standing</a>
+						</li>
+					</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/stats">STATS</a>
+					<div id="NBLstats">
+						<ul>
+							<li>
+								<a href="/stats/leageleaders">Leage Leaders</a>
+							</li>
+							<li>
+								<a href="/stats/teamstats">Team Stats</a>
+							</li>
+							<li>
+								<a href="/stats/playerstats">Player Stats</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/photos">PHOTOS</a>
+					<div id="NBLphoto">
+						<ul>
+							<li>
+								<a href="/photos/byteam">By Team</a>
+							</li>
+							<li>
+								<a href="/photos/focus">Focus</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/suggestion">SUGGESTION</a>
+					<div id="NBLsuggest">
+						<ul>
+							<li>
+								<a href="/suggestion/forweb">For Website</a>
+							</li>
+							<li>
+								<a href="/suggestion/forleage">For Leage</a>
+							</li>
+						</ul>
+					</div>
+				</li>		
+			</ul>
+		</div>
+	
+	</body>
+</html>
