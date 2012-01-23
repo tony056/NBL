@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+<script language="JavaScript1.1"> 
+<!-- 
+var img1 = new Image(); 
+img1.src = "C:\Users\jeff\Desktop\NBL\192698_115290241883325_100002070498122_127540_5511953_o.jpg"; 
+
+var img2 = new Image(); 
+img2.src = "C:\Users\jeff\Desktop\NBL\179854_179278278779980_100000934274808_373233_7234627_n (1).jpg";
+
+ 
+var img3 = new Image(); 
+img3.src = "C:\Users\jeff\Desktop\NBL\399587_342328915781393_100000128611015_1566366_1689016074_n.jpg";
+
+var img4 = new Image(); 
+img4.src = "C:\Users\jeff\Desktop\NBL\new_nbl_logo.jpg";
+
+
+//--> 
+</script>
+
+</head>
+
+<body onLoad="init()">
+<script language="JavaScript"> 
+<!-- 
+var maxLoops = 4;  //圖片總數
+var bInterval = 2;  //圖片完全開啟之後，停留的時間，2=2秒
+var count = 1; 
+function init() { 
+blendtrjs.filters.blendTrans.apply(); 
+document.images.blendtrjs.src = eval("img"+count+".src"); 
+blendtrjs.filters.blendTrans.play(); 
+if (count < maxLoops) { 
+count++; 
+} 
+else { 
+count = 1; 
+} 
+setTimeout("init()", bInterval*500+2000); 
+} 
+//--> 
+</script><img src="C:\Users\jeff\Desktop\NBL\192698_115290241883325_100002070498122_127540_5511953_o.jpg" name="blendtrjs" border="0" style="filter: blendTrans(duration=2)">
+
+</body>
+
+
+
+</html>

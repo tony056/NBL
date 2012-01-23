@@ -27,33 +27,39 @@ class MainHandler(webapp.RequestHandler):
             }
         path = os.path.join(os.path.dirname(__file__), 'mainpage.txt')
         self.response.out.write(template.render(path, template_values))
-class DATA_csieA(db.Model):
-    name = db.StringProperty()
-    account = db.UserProperty()
-    total_points = db.FloatProperty()
-    total_assists = db.FloatPrpperty()
-    total_rebounds = db.FloatProprty()
-    total_steals = db.FloatProperty()
-    toatl_blocks = db.FLoatProperty()
-    toatl_turnovers = db.FloatProperty()
-    total_threeattempt = db.FloatProperty()
-    total_threemade = db.FloatProperty()
-    total_fouls = db.FloatProperty()
-    FieldGoal_made = db.FloatProperty()
-    FieldGoal_attempt = db.FloatProperty()
-    FreeThrow_made = db.FLoatProperty()
-    FreeThrow_attempt = db.FLoatProperty()
+##class DATA_csieA(db.Model):
+##    name = db.StringProperty()
+##    account = db.UserProperty()
+##    total_points = db.FloatProperty()
+##    total_assists = db.FloatPrpperty()
+##    total_rebounds = db.FloatProprty()
+##    total_steals = db.FloatProperty()
+##    toatl_blocks = db.FLoatProperty()
+##    toatl_turnovers = db.FloatProperty()
+##    total_threeattempt = db.FloatProperty()
+##    total_threemade = db.FloatProperty()
+##    total_fouls = db.FloatProperty()
+##    FieldGoal_made = db.FloatProperty()
+##    FieldGoal_attempt = db.FloatProperty()
+##    FreeThrow_made = db.FLoatProperty()
+##    FreeThrow_attempt = db.FLoatProperty()
 class datakeyin(webapp.RequestHandler):
     def post(self):
         database=DATA_csieA()
         database.name=self.request.get('name')
         database.total_points=database.total
-        
+class test(webapp.RequestHandler):
+    def get(self):
+        template_values = {
+            "a":[1,2,5,7]
+            }
+        path = os.path.join(os.path.dirname(__file__), 'test.txt')
+        self.response.out.write(template.render(path, template_values))   
     
     
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler)],
+    application = webapp.WSGIApplication([('/', MainHandler),('/test',test)],
                                          debug=True)
     util.run_wsgi_app(application)
 
