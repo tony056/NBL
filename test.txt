@@ -1,12 +1,5 @@
 ﻿<html>
-<img src="/button/butter.gif" name="pic" height=100>
-<form>
-<input type="button" value="按下我變成大醜男" onclick="change_image(0)"><br>
-<input type="button" value="按下我變成大帥哥" onclick="change_image(1)"><br>
-<input type="button" value="按下我變成大笨蛋" onclick="change_image(2)"><br>
-<input type="button" value="按下我變成NBL" onclick="change_image(3)"><br>
-</form>
-
+<head>
 <script language="javascript">
 <!--
 
@@ -17,13 +10,43 @@ imgfile[1] = "img/192698_115290241883325_100002070498122_127540_5511953_o.jpg"
 imgfile[2] = "img/399587_342328915781393_100000128611015_1566366_1689016074_n.jpg"
 imgfile[3] = "img/new_nbl_logo.jpg"
 
-function change_image(index)
-{
-   document.pic.src = imgfile[index]
-}
-
-
 //-->
+
+function change_image(indexx)
+{
+   if(indexx == 1)
+   {	
+   	document.pic.src = imgfile[indexx];
+	setTimeout("change_image(2)",2000);
+   }
+   else if(indexx == 2)
+   {
+	document.pic.src = imgfile[indexx];
+	setTimeout("change_image(3)",2000);
+   }
+   else if(indexx == 3)
+   {
+	document.pic.src = imgfile[indexx];
+	setTimeout("change_image(4)",2000);
+   }
+   else
+   {
+	document.pic.src = imgfile[indexx];
+	setTimeout("change_image(1)",2000);
+   }
+	
+}
+</script>
+</head>
+<body>
+<img src="/button/butter.gif" name="pic" height=100>
+<form>
+
+</form>
+
+<script>
+change_image(1)
 </script>
 
+</body>
 </html>
