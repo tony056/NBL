@@ -12,7 +12,10 @@
 		imgfile[3] = "img/new_nbl_logo.jpg"
 
 		//-->
-
+	function resizeimage()
+	{
+		document.smallpic1.src = imgfile[3];
+	}
 	function change_image(indexx)
 	{
    		if(indexx == 1)
@@ -136,7 +139,56 @@
 			background:#dfdfdf;
 		}
 		#NBLimage{
-			bgcolor:blue;
+			background-color:#000000;
+			width:700px;height:300px;
+		}
+		#bigimg{
+			position:relative;
+			top:20px;
+			left:200px;
+		}
+		#smallimg1{
+			position:relative;
+			top:0px;
+			left:70px;
+			width:50px;
+			height:38px;
+		}
+		#smallimg2{
+			position:relative;
+			top:68px;
+			left:70px;
+			width:50px;
+			height:38px;
+		}
+		#smallimg3{
+			position:relative;
+			top:116px;
+			left:70px;
+			width:50px;
+			height:38px;
+		}
+		#smallimg4{
+			position:relative;
+			top:164px;
+			left:70px;
+			width:50px;
+			height:38px;
+		}
+		#NBLchatroom{
+			width:700px;
+			height:300px;
+			border-style:solid;
+		}
+		#NBLchatroom input{
+			position:relative;
+			top:0px;
+			border-style:outset;
+			border-width:3px;
+		}
+		#NBLsign{
+			background-color:blue;
+			width:400px;
 		}
 		</style>		
 		<title>nbl.appspot.com</title>
@@ -228,7 +280,29 @@
 			</ul>
 		</div>
 	<div id="NBLimage">
-	<img src="/button/butter.gif" name="pic" height=100>
+	<img id="smallimg1" src="img/new_nbl_logo.jpg" name="smallpic1" >
+	<img id="smallimg2" src="img/new_nbl_logo.jpg" >
+	<img id="smallimg3" src="img/new_nbl_logo.jpg" >
+	<img id="smallimg4" src="img/new_nbl_logo.jpg" >
+	<img id="bigimg" src="/button/butter.gif" name="pic" height=200>
+	</div>
+	<div id="NBLchatroom">
+		{% for greeting in greetings %}
+      		{% if greeting.author %}
+        	<b>{{ greeting.author.nickname }}</b> wrote:
+      		{% else %}
+       			An anonymous person wrote:
+      		{% endif %}
+      		<blockquote>{{ greeting.content|escape }}</blockquote>
+    		{% endfor %}
+
+    		<form action="/sign" method="post">
+      		<div id="NBLsign"><textarea name="content" rows="1" cols="30"></textarea>
+      		<input type="submit" value="Sign Guestbook"></div>
+    		</form>
+
+    		
+
 	</div>
 	<script>
 	change_image(1)

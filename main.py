@@ -18,15 +18,41 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
+from google.appengine.api import users
+from google.appengine.ext import db
 import os
 import cgi
+class Greeting(db.Model):
+  author = db.UserProperty()
+  content = db.StringProperty(multiline=True)
+  date = db.DateTimeProperty(auto_now_add=True)
 class MainHandler(webapp.RequestHandler):
     def get(self):
+        greetings_query = Greeting.all().order('-date')
+        greetings = greetings_query.fetch(10)
+
+        if users.get_current_user():
+          url = users.create_logout_url(self.request.uri)
+          url_linktext = 'Logout'
+        else:
+          url = users.create_login_url(self.request.uri)
+          url_linktext = 'Login'
         template_values = {
-            "a":[1,2,5,7]
+            'greetings': greetings,
+            'url': url,
+            'url_linktext': url_linktext,
             }
         path = os.path.join(os.path.dirname(__file__), 'mainpage.txt')
         self.response.out.write(template.render(path, template_values))
+class log_in(webapp.RequestHandler):
+    def get(self):
+        greeting = Greeting()
+
+        if users.get_current_user():
+            greeting.author = users.get_current_user()
+            greeting.content = self.request.get('content')
+            greeting.put()
+        self.redirect('/')
 ##class DATA_csieA(db.Model):
 ##    name = db.StringProperty()
 ##    account = db.UserProperty()
@@ -43,6 +69,7 @@ class MainHandler(webapp.RequestHandler):
 ##    FieldGoal_attempt = db.FloatProperty()
 ##    FreeThrow_made = db.FLoatProperty()
 ##    FreeThrow_attempt = db.FLoatProperty()
+
 class datakeyin(webapp.RequestHandler):
     def post(self):
         database=DATA_csieA()
@@ -51,7 +78,9 @@ class datakeyin(webapp.RequestHandler):
 class test(webapp.RequestHandler):
     def get(self):
         template_values = {
-            "a":[1,2,5,7]
+            'greetings': greetings,
+            'url': url,
+            'url_linktext': url_linktext,
             }
         path = os.path.join(os.path.dirname(__file__), 'test.txt')
         self.response.out.write(template.render(path, template_values))   
@@ -59,7 +88,7 @@ class test(webapp.RequestHandler):
     
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler),('/test',test)],
+    application = webapp.WSGIApplication([('/', MainHandler),('/test',test),('/sign',log_in)],
                                          debug=True)
     util.run_wsgi_app(application)
 
