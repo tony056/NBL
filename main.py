@@ -84,11 +84,16 @@ class test(webapp.RequestHandler):
             }
         path = os.path.join(os.path.dirname(__file__), 'test.txt')
         self.response.out.write(template.render(path, template_values))   
-    
+class test2(webapp.RequestHandler):
+    def get(self):
+        template_values = {
+            }
+        path = os.path.join(os.path.dirname(__file__), 'onMouse.txt')
+        self.response.out.write(template.render(path, template_values))    
     
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler),('/test',test),('/sign',log_in)],
+    application = webapp.WSGIApplication([('/', MainHandler),('/test2',test2),('/test',test),('/sign',log_in)],
                                          debug=True)
     util.run_wsgi_app(application)
 
