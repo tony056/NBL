@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 		
 
@@ -173,6 +173,7 @@
 			border-color:white;
 			border-width:5px;
 			cellspacing:30px;
+			border: 10px groove #6699cc;
 		}
 		#tableimg th{
 			background-color:white;
@@ -334,8 +335,10 @@
 			</ul>
 		</div>
 		
-		
+		<div align=left><p><font size=4 style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan04.gif)>最新戰績</font><p></div>
+		<div align=left>
 		<table id="tableteamrecord2">
+			
 			<tr>
 			
 			<th>TEAM1</th>
@@ -374,7 +377,7 @@
 						
 			
 		</table>
-		
+		</div>
 		
 
 	 	
@@ -393,7 +396,7 @@
 	<div>
 	
 	<table id="tableteamrecord">
-
+		
 		
 
 		<tr> 
@@ -450,6 +453,10 @@
 	<script>
 	change_image(1)
 	</script>
+
+
+	<div id="NBLchatroom"><marquee direction=right width=200 height="30">最新公告</marquee>
+	<marquee direction=left width=200 height="30">超哥說了算</marquee></div>
 	</body>
 	
 	
