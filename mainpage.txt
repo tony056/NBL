@@ -1,17 +1,16 @@
 ﻿<html>
 	<head>
-		
-
 		<meta http-equiv="content-type" content="text/html; charest=utf-8">
 		<script language="javascript">
 		<!--
 
-		imgfile = new Array(4);
+		imgfile = new Array(5);
 
-		imgfile[0] = "img/179854_179278278779980_100000934274808_373233_7234627_n (1).jpg"
+		imgfile[0] = "img/179854_179278278779980_100000934274808_373233_7234627_n(1).jpg"
 		imgfile[1] = "img/192698_115290241883325_100002070498122_127540_5511953_o.jpg"
 		imgfile[2] = "img/399587_342328915781393_100000128611015_1566366_1689016074_n.jpg"
-		imgfile[3] = "img/new_nbl_logo.new.jpg"
+		imgfile[3] = "img/new_nbl_logo.jpg"
+		imgfile[4] = "img/black.jpg"
 
 		//-->
 	function resizeimage()
@@ -22,33 +21,53 @@
 	{
    		if(indexx == 1)
    		{	
-   			document.pic.src = imgfile[indexx];
+   			document.pic.src = imgfile[indexx-1];
+			document.smallpic1.src = imgfile[3];	
+			document.smallpic2.src = imgfile[4];
+			document.smallpic3.src = imgfile[4];
+			document.smallpic4.src = imgfile[4];
 			setTimeout("change_image(2)",3000);
    		}
    		else if(indexx == 2)
    		{
-			document.pic.src = imgfile[indexx];
+			document.pic.src = imgfile[indexx-1];
+			document.smallpic1.src = imgfile[4];
+			document.smallpic2.src = imgfile[1];
+			document.smallpic3.src = imgfile[4];
+			document.smallpic4.src = imgfile[4];
 			setTimeout("change_image(3)",3000);
    		}
    		else if(indexx == 3)
    		{
-			document.pic.src = imgfile[indexx];
+			document.pic.src = imgfile[indexx-1];
+			document.smallpic1.src = imgfile[4];
+			document.smallpic2.src = imgfile[4];
+			document.smallpic3.src = imgfile[2];
+			document.smallpic4.src = imgfile[4];
 			setTimeout("change_image(4)",3000);
    		}
-   		else
+   		else if(indexx == 4)
    		{
-			document.pic.src = imgfile[indexx];
+			document.pic.src = imgfile[indexx-1];
+			document.smallpic2.src = imgfile[4];
+			document.smallpic3.src = imgfile[4];
+			document.smallpic1.src = imgfile[4];
+			document.smallpic4.src = imgfile[3];
 			setTimeout("change_image(1)",3000);
    		}
-	
-	}
-</script>
-		
-		<style type="text/css">
 
-		
+	}
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+		<style type="text/css">
 		#NBLHeader{
-			width:800px;height:30px;
+			width:1300px;height:30px;
 			z-index:2;
 		}
 		#NBLHeader ul{
@@ -162,68 +181,61 @@
 		#NBLimage{
 			z-index:1;
 			background-color:#FFFFFF;
-			width:700px;height:300px;
+			width:1300px;height:800px;
 		}
 		#tableimg{
-			
-			position:relative;
-			top:50px;
+			width:500px;
+			height:300px;
+			position:absolute;
+			top:150px;
 			left:100px;
 			border-style:inset;
 			border-color:white;
 			border-width:5px;
 			cellspacing:30px;
-			border: 10px groove #6699cc;
 		}
 		#tableimg th{
 			background-color:white;
 		}
 		#smallimg1{
-			width:50px;
-			height:38px;
+			width:75px;
+			height:57px;
 		}
 		#smallimg2{
-			width:50px;
-			height:38px;
+			width:75px;
+			height:57px;
 		}
 		#smallimg3{
-			width:50px;
-			height:38px;
+			width:75px;
+			height:57px;
 		}
 		#smallimg4{
-			width:50px;
-			height:38px;
+			width:75px;
+			height:57px;
 		}
 		#tableteamrecord{
+			width:200px;
+			height:300px;
 			border: 0;
 			font-size:14px;
 			font-color:#FFFFFF;
 			position:absolute;
 			top:150px;
-			left:450px;
+			right:100px;
 		}
 		#tableteamrecord th{
 			background-color:yellow;
 		}
 		#tableteamrecord td{
+			background-color:gray;
 			border-bottom:1 solid #000000;
+			text-align:center; 
 		}
-		#tableteamrecord h1{
-			font-family:Arial;font-color:blue;border:5pt solid #6699cc;
-		}
-		#tableteamrecord h2{
-			font-family:Arial;font-color:blue;border:5pt solid #6699cc;
-		}
-
 		#tableteamrecord2 th{
 			background-color:blue;
 		}
-		
-		
-
- 
 		#NBLchatroom{
-			width:700px;
+			width:1300px;
 			height:300px;
 			border-style:solid;
 		}
@@ -237,8 +249,11 @@
 			background-color:blue;
 			width:400px;
 		}
-	
-		
+		#fb-like{
+			position:absolute;
+			right:100px;
+			top:500px;
+		}
 		</style>		
 		<title>nbl.appspot.com</title>
 	</head>
@@ -249,9 +264,9 @@
 				<li>
 					<a href="/score">SCORES & SCHEDULES</a>
 				</li>
-				
+
 				<li>
-					
+
 					<a href="/players">PLAYERS</a>
 					<div id="NBLplayer">
 					<ul>
@@ -261,7 +276,7 @@
 						<li>
 							<a href="/player/teamroster">Team Roster</a>
 						</li>
-						
+
 					</ul>
 					</div>
 				</li>
@@ -334,7 +349,9 @@
 				</li>		
 			</ul>
 		</div>
-		
+
+
+
 		<div align=left><p><font size=4 style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan04.gif)>最新戰績</font><p></div>
 		<div align=left>
 		<table id="tableteamrecord2">
@@ -378,27 +395,22 @@
 			
 		</table>
 		</div>
-		
 
-	 	
+
+
+
+
 
 	<div id="NBLimage">
 	<table id="tableimg">
-	<th rowspan=4><img id="bigimg" src="/button/butter.gif" name="pic" height=152></th>
-	<th><img id="smallimg1" src="img/new_nbl_logo.jpg" name="smallpic1" ></th>
-	<tr><th><img id="smallimg2" src="img/new_nbl_logo.jpg" ></th></tr>
-	<tr><th><img id="smallimg3" src="img/new_nbl_logo.jpg" ></th></tr>
-	<tr><th><img id="smallimg4" src="img/new_nbl_logo.jpg" ></th></tr>
-	
+	<th colspan=4><img id="bigimg" src="/button/butter.gif" name="pic" height=152></th>
+	<tr></tr><th><img id="smallimg1" src="img/new_nbl_logo.jpg" name="smallpic1" ></th>
+	<th><img id="smallimg2" src="img/new_nbl_logo.jpg" name="smallpic2"></th>
+	<th><img id="smallimg3" src="img/new_nbl_logo.jpg" name="smallpic3"></th>
+	<th><img id="smallimg4" src="img/new_nbl_logo.jpg" name="smallpic4"></th>
+
 	</table>
-
-			
-	<div>
-	
 	<table id="tableteamrecord">
-		
-		
-
 		<tr> 
     		<th>TEAM</th> 
     		<th>GAME</th>
@@ -414,23 +426,59 @@
 		<td>0.00</td> 
   		</tr> 
   		<tr> 
-    		<td>Sophie</td> 
+    		<td>CSIE_B</td> 
     		<td>0</td>
 		<td>0</td>
 		<td>0</td>
 		<td>0.00</td> 
   		</tr> 
   		<tr> 
-    		<td>Alice</td> 
+    		<td>CSIE_C</td> 
     		<td>0</td>
 		<td>0</td>
 		<td>0</td>
 		<td>0.00</td> 
   		</tr> 
+		<tr>
+		<td>CSIE_D</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0.00</td>
+		</tr>
+		<tr>
+		<td>CSIE_E</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0.00</td>
+		</tr>
+		<tr>
+		<td>CSIE_F</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0.00</td>
+		</tr>
+		<tr>
+		<td>CSIE_G</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0.00</td>
+		</tr>
+		<tr>
+		<td>CSIE_H</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0</td>
+		<td>0.00</td>
+		</tr>
 	</table>
-	</div>
-	</div>
-	
+	<div id="fb-like">
+	<div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="200" data-height="300" data-show-faces="true" data-stream="false" data-header="true"></div>
+	</div></div>
+
 	<div id="NBLchatroom">
 		{% for greeting in greetings %}
       		{% if greeting.author %}
@@ -449,20 +497,12 @@
     		
 
 	</div>
-	
+
 	<script>
 	change_image(1)
 	</script>
 
-
 	<div id="NBLchatroom"><marquee direction=right width=200 height="30">最新公告</marquee>
 	<marquee direction=left width=200 height="30">超哥說了算</marquee></div>
 	</body>
-	
-	
-
-
-
-
-
 </html>
