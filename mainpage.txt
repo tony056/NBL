@@ -254,6 +254,12 @@
 			right:100px;
 			top:500px;
 		}
+		#block{
+			width:200px;
+			height:180px;
+			border-style:groove;
+		}
+		
 		</style>		
 		<title>nbl.appspot.com</title>
 	</head>
@@ -475,10 +481,27 @@
 		<td>0.00</td>
 		</tr>
 	</table>
+	</div>
+	
+	
+	<div id="block">
+	
+	<form action="/"method=POST>
+	
+	<font size=5 background-color:blue>你覺得童盈超帥嗎?</font><br>
+	<input type=radio name=YES>
+        yes<p>
+	<input type=radio name=NO>
+	        no<p>
+
+	<input type=submit><input type=reset>
+	</form>
+	</div>
 	<div id="fb-like">
 	<div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="200" data-height="300" data-show-faces="true" data-stream="false" data-header="true"></div>
-	</div></div>
-
+	</div>
+			
+	
 	<div id="NBLchatroom">
 		{% for greeting in greetings %}
       		{% if greeting.author %}
@@ -502,9 +525,9 @@
 	change_image(1)
 	</script>
 
-	<div id="NBLchatroom"><marquee direction=right width=200 height="30"><font style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
+	<div><marquee direction=right width=200 height="50"><font size=50 style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
 	最新公告</font></marquee>
-	<marquee direction=left width=200 height="30"><font style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
+	<marquee direction=left width=200 height="50"><font size=50 style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
 	超哥說了算</font></marquee></div>
 	<img src="https://graph.facebook.com/100002070498122/picture"/>
 
@@ -530,45 +553,25 @@
         Login with Facebook
       </div>
 
-
-	<div background="img/new_nbl_logo.jpg">
 	
 
-<!-- 加上以下這一行，以免有亂碼產生 -->
-<meta http-equiv="Content-Type" content="text/html; charset=big5">
-<title>留言板</title>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-
-<hr size=1>
-<center>
-<!--以下是您的站台名稱-->
-<font size=5 color=#FF3300>要跟超哥說什麼</font>
-<br>
-<!--以下是您的版權宣告-->
-<font color="green" size="2">嚴禁嘴砲 注意不要人身攻擊 ，請理性</font>
-<hr size=1>
-<table align=center border=0 width=870><tr><td>
-
-<!--以下是表單內容, 共有二個欄位: 姓名及留言內容, 您可以自行再增添; 
-表單採 POST 呼叫法, cgi 程式名稱是 GBK.cgi -->
-<form name="ols3" method="post" action="/" width=870>
+<div class="fb-comments" data-href="http://example.com" data-num-posts="2" data-width="870"></div>
+<a href="http://free-extras.com/images/playing_basketball-987.htm" target="_blank"><img src="http://images.free-extras.com/pics/p/playing_basketball-987.gif" border="0" alt="Playing Basketball" /></a> 
 
 
 
-<br>
-
-<!--留言內容欄位的名稱是 comment-->
-留言內容:<br>
-<textarea name="comment" rows="5" cols="45"></textarea>
-<p>
-<input type="submit" value="確定"> <input type="reset" value="清除">
-<input type="button" value="回上一頁" onClick="history.back()">
-</form>
-
-</td></tr></table></center>
 
 
 
-	</div>
+
 	</body>
 </html>
