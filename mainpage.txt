@@ -502,7 +502,49 @@
 	change_image(1)
 	</script>
 
-	<div id="NBLchatroom"><marquee direction=right width=200 height="30">最新公告</marquee>
-	<marquee direction=left width=200 height="30">超哥說了算</marquee></div>
+	<div id="NBLchatroom"><marquee direction=right width=200 height="30"><font style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
+	最新公告</font></marquee>
+	<marquee direction=left width=200 height="30"><font style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
+	超哥說了算</font></marquee></div>
+
+	<div>
+	
+
+<!-- 加上以下這一行，以免有亂碼產生 -->
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>留言板</title>
+
+
+<hr size=1>
+<center>
+<!--以下是您的站台名稱-->
+<font size=5 color=red>我的訪客留言板</font>
+<br>
+<!--以下是您的版權宣告-->
+<font color="green" size="2"> v1.0 精簡版 (C) 1997 written by OLS3</font>
+<hr size=1>
+<table align=center border=0><tr><td>
+
+<!--以下是表單內容, 共有二個欄位: 姓名及留言內容, 您可以自行再增添; 
+表單採 POST 呼叫法, cgi 程式名稱是 GBK.cgi -->
+<form name="ols3" method="post" action="/">
+
+<!--姓名欄位的名稱是 name-->
+姓名: <input type="text" name="name" size="30">
+<br>
+
+<!--留言內容欄位的名稱是 comment-->
+留言內容:<br>
+<textarea name="comment" rows="5" cols="45"></textarea>
+<p>
+<input type="submit" value="確定"> <input type="reset" value="清除">
+<input type="button" value="回上一頁" onClick="history.back()">
+</form>
+
+</td></tr></table></center>
+
+
+
+	</div>
 	</body>
 </html>
