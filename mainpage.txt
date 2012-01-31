@@ -506,8 +506,32 @@
 	最新公告</font></marquee>
 	<marquee direction=left width=200 height="30"><font style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan05.gif)>
 	超哥說了算</font></marquee></div>
+	<img src="https://graph.facebook.com/100002070498122/picture"/>
 
-	<div>
+	 <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : 'YOUR_APP_ID',
+            status     : true, 
+            cookie     : true,
+            xfbml      : true,
+            oauth      : true,
+          });
+        };
+        (function(d){
+           var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           d.getElementsByTagName('head')[0].appendChild(js);
+         }(document));
+      </script>
+      <div class="fb-login-button" data-scope="email,user_checkins">
+        Login with Facebook
+      </div>
+
+
+	<div background="img/new_nbl_logo.jpg">
 	
 
 <!-- 加上以下這一行，以免有亂碼產生 -->
@@ -518,19 +542,19 @@
 <hr size=1>
 <center>
 <!--以下是您的站台名稱-->
-<font size=5 color=red>我的訪客留言板</font>
+<font size=5 color=#FF3300>要跟超哥說什麼</font>
 <br>
 <!--以下是您的版權宣告-->
-<font color="green" size="2"> v1.0 精簡版 (C) 1997 written by OLS3</font>
+<font color="green" size="2">嚴禁嘴砲 注意不要人身攻擊 ，請理性</font>
 <hr size=1>
-<table align=center border=0><tr><td>
+<table align=center border=0 width=870><tr><td>
 
 <!--以下是表單內容, 共有二個欄位: 姓名及留言內容, 您可以自行再增添; 
 表單採 POST 呼叫法, cgi 程式名稱是 GBK.cgi -->
-<form name="ols3" method="post" action="/">
+<form name="ols3" method="post" action="/" width=870>
 
-<!--姓名欄位的名稱是 name-->
-姓名: <input type="text" name="name" size="30">
+
+
 <br>
 
 <!--留言內容欄位的名稱是 comment-->

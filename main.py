@@ -88,7 +88,7 @@ class test2(webapp.RequestHandler):
     def get(self):
         template_values = {
             }
-        path = os.path.join(os.path.dirname(__file__), 'onMouse.txt')
+        path = os.path.join(os.path.dirname(__file__), 'test2.txt')
         self.response.out.write(template.render(path, template_values))    
     
 
