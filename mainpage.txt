@@ -233,6 +233,7 @@
 		}
 		#tableteamrecord2 th{
 			background-color:blue;
+			bordr-style:groove;
 		}
 		#NBLchatroom{
 			width:1300px;
@@ -258,6 +259,13 @@
 			width:200px;
 			height:180px;
 			border-style:groove;
+		}
+		#block2{
+			background-color:yellow;
+			border-style:solid;
+			width:500px;
+			height:50px;
+			
 		}
 		
 		</style>		
@@ -358,23 +366,25 @@
 
 
 
-		<div align=left><p><font size=4 style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan04.gif)>最新戰績</font><p></div>
-		<div align=left>
+		<div align=left><p><font size=4 style=background:url(http://shyan1688.myweb.hinet.net/ing/shyan04.gif)>最新戰績 點擊後可知比分</font><p></div>
+		<div align=left id="block2">
+		<form action="/" method=post>
 		<table id="tableteamrecord2">
 			
 			<tr>
 			
-			<th>TEAM1</th>
-			<th>TEAM2</th>
-			<th>GAME</th>
-			<th>POINTS</th>
-			<td>~~</td>	
+			
+			<th onclick="alert('100-10')">TEAM1</th>
+			<th onclick="alert('100-10')">TEAM2</th>
+			
+			
+			<td></td>		
 			
 
-			<th>TEAM1</th>
-			<th>TEAM2</th>
-			<th>GAME</th>
-			<th>POINTS</th>
+			<th  onclick="alert('100-10')">TEAM1</th>
+			<th  onclick="alert('100-10')">TEAM2</th>
+			
+			
 			
 			</tr>
 			
@@ -384,15 +394,13 @@
 		
 			<tr>
 			
-			<th>CISE_A</th>
-			<th>CSIE_B</th>
-			<th>0-0</th>
-			<th>0-0</th>
-			<td>~~</td>			
-			<th>CISE_A</th>
-			<th>CSIE_B</th>
-			<th>0-0</th>
-			<th>0-0</th>
+			<th  onclick="alert('100-20')">CISE_A</th>
+			<th  onclick="alert('100-20')">CSIE_B</th>
+			
+			<td>	</td>			
+			<th  onclick="alert('100-20')">CISE_A</th>
+			<th  onclick="alert('100-20')">CSIE_B</th>
+			
 			
 			</tr>
 		
@@ -487,13 +495,13 @@
 	
 	
 	
-	
+		
 	<div id="fb-like">
 
 	
 	<!--無名正妹-->
 	<script type="text/javascript" src="http://promo.wretch.cc/wretchbeautyclock/iframe.js" ></script>
-	
+	<br><br>
 	<form action="/"method=POST id="block">
 	
 	<font size=5 background-color:blue>你覺得童盈超帥嗎?</font><br>

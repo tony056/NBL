@@ -1,5 +1,16 @@
-<html>
-
-<script src=<WPPreserveDoubleQuote />http://imagenavi.jp/lab/blogparts/scbp1.js<WPPreserveDoubleQuote /> type=<WPPreserveDoubleQuote />text/javascript<WPPreserveDoubleQuote />><!--mce:5--></script>
-
+﻿<html>
+<head>
+<style type="text/css">
+#board{border-style:groove;}
+</style>
+</head>
+<body>
+<table>
+<div id="board">
+<a href="" onclick="alert('100比10')">
+CSIE_A-CSIE_B
+</a>
+</div>
+</table>
+</body>
 </html>
