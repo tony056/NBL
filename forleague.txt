@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+<style type="text/css">
+#title{
+	border-style:groove;
+	background-color:red;
+}
+</style>
+</head>
+<body>
+<dvi>
+<p style="font-weight:bold;text-decoration:underline;font-style:oblique;font-variant:small-caps;color:#871030;background-color:#D9DAFF;border: 11px outset #3BFF3B;letter-spacing:1pt;word-spacing:5pt;font-size:30px;text-align:center;font-family:palatino linotype, palatino, serif;line-height:2;">
+給 NBL 聯盟的建議</p>
+</div>
+
+<div>
+<p style="font-weight:bold;font-style:oblique;font-variant:small-caps;color:#1C8743;background-color:#FDFFBA;border: 4px dashed #b5a759;letter-spacing:1pt;word-spacing:5pt;font-size:26px;text-align:center;font-family:arial, helvetica, sans-serif;line-height:2;">
+若有對主辦人，或是比賽有不滿或建議可以在這裡提出</p>
+</div>
+
+
+      {% for greeting in greetings %}
+      {% if greeting.author %}
+      <b>{{ greeting.author.nickname }}</b> wrote:
+      {% else %}
+      	An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content|escape }}</blockquote>
+      {% endfor %}                       
+
+
+<form action="/sign" method="post">
+<div><textarea name="content" rows="3" cols="60"></textarea></div>
+<div><input type="submit" value="留言"></div>
+</form>
+
+</body>
+</html>

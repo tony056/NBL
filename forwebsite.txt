@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+<style type="text/css">
+#title{
+	border-style:groove;
+	background-color:red;
+}
+</style>
+</head>
+<body>
+<div>
+<p style="font-weight:bold;font-style:oblique;color:#241487;background-color:#DBFF9C;border: 6px inset #54F4FF;letter-spacing:1pt;word-spacing:4pt;font-size:30px;text-align:center;font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif;line-height:1;">
+給 NBL 網站的建議</p>
+</div>
+<div>
+<p style="font-weight:bold;font-style:italic;color:#318487;background-color:#FFEFBA;border: 6px double #392BFF;letter-spacing:1pt;word-spacing:4pt;font-size:17px;text-align:justify;font-family:georgia, serif;line-height:1;">
+因為網站是三位程度不高的大一同學製作，所以要是有可以改進的地方還請大家多多指教</p>
+
+</div>
+
+
+      {% for greeting in greetings %}
+      {% if greeting.author %}
+      <b>{{ greeting.author.nickname }}</b> wrote:
+      {% else %}
+      	An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content|escape }}</blockquote>
+      {% endfor %}                       
+
+
+<form action="/sign" method="post">
+<div><textarea name="content" rows="3" cols="60"></textarea></div>
+<div><input type="submit" value="留言"></div>
+</form>
+
+</body>
+</html>

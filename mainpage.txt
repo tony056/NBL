@@ -350,7 +350,7 @@
 								<a href="/suggestion/forweb">For Website</a>
 							</li>
 							<li>
-								<a href="/suggestion/forleage">For Leage</a>
+								<a href="/suggestion/forleague">For League</a>
 							</li>
 						</ul>
 					</div>

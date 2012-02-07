@@ -16,6 +16,7 @@
 #
 #coding:utf-8
 from google.appengine.ext import webapp
+from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 from google.appengine.api import users
@@ -92,8 +93,42 @@ class test2(webapp.RequestHandler):
         self.response.out.write(template.render(path, template_values))    
     
 
+class forwebsite(webapp.RequestHandler):
+  def get(self):
+      greetings_query = Greeting.all().order('-date')
+      greetings = greetings_query.fetch(10)
+    
+      template_values = {
+            'greetings': greetings,
+            }
+      path = os.path.join(os.path.dirname(__file__), 'forwebsite.txt')
+      self.response.out.write(template.render(path, template_values))   
+class forleague(webapp.RequestHandler):
+  def get(self):
+      greetings_query = Greeting.all().order('-date')
+      greetings = greetings_query.fetch(10)
+    
+      template_values = {
+            'greetings': greetings,
+            }
+      path = os.path.join(os.path.dirname(__file__), 'forleague.txt')
+      self.response.out.write(template.render(path, template_values)) 
+
+class Guestbook(webapp.RequestHandler):
+  def post(self):
+    greeting = Greeting()
+
+    if users.get_current_user():
+      greeting.author = users.get_current_user()
+
+    greeting.content = self.request.get('content')
+    greeting.put()
+    self.redirect('/')
+
+
+
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler),('/test2',test2),('/test',test),('/sign',log_in)],
+    application = webapp.WSGIApplication([('/', MainHandler),('/test2',test2),('/Guestbook',Guestbook),('/suggestion/forweb',forwebsite),('/suggestion/forleague',forleague),('/test',test),('/sign',log_in)],
                                          debug=True)
     util.run_wsgi_app(application)
 
