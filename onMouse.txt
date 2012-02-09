@@ -1,11 +1,31 @@
 <html>
+
+
 <body>
+<script language="javascript">
+function image()
+{
+	document.write("<img src='img/179854_179278278779980_100000934274808_373233_7234627_n(1).jpg' onclick="x=0;">");
+	document.write("<img src='img/192698_115290241883325_100002070498122_127540_5511953_o.jpg' onclick="x=1;">");
+	document.write("<img src='img/399587_342328915781393_100000128611015_1566366_1689016074_n.jpg' onclick="x=2;">");
+	document.write("<img src='img/new_nbl_logo.jpg' onclick="x=3;">");
+	document.write("<img src='img/black.jpg' onclick="x=4;">");
+	if(x==0)
+	{document.write("<img src='img/179854_179278278779980_100000934274808_373233_7234627_n(1).jpg'>");}
+	if(x==1)
+	{document.write("<img src='img/192698_115290241883325_100002070498122_127540_5511953_o.jpg'>");}
+	if(x==2)
+	{document.write("<img src='img/399587_342328915781393_100000128611015_1566366_1689016074_n.jpg'>");}
+	if(x==3)
+	{document.write("<img src='img/new_nbl_logo.jpg'>");}
+	if(x==4)
+	{document.write("<img src='img/black.jpg'>");}
+}
 
-<A HREF="/" 
-onMouseOver="document.img.src='img/192698_115290241883325_100002070498122_127540_5511953_o.jpg'"
-onMouseOut="document.img.src='img/new_nbl_logo.jpg'">
-<IMG SRC="img/new_nbl_logo.jpg" NAME="img" width="100" height="100">
-</a>
+image();
 
+<object type="application/x-shockwave-flash" data="http://widgets.clearspring.com/o/45cc95d4350510ee/482403db7e047264/47961cb3a4dad60f/9fda15e5" id="W45cc95d4350510ee482403db7e047264" height="444" width="198"><param value="http://widgets.clearspring.com/o/45cc95d4350510ee/482403db7e047264/47961cb3a4dad60f/9fda15e5" name="movie"><param value="transparent" name="wmode"><param value="all" name="allowNetworking"><param value="always" name="allowScriptAccess"></object>
+<object type="application/x-shockwave-flash" data="http://widgets.clearspring.com/o/4704165422de6aac/482413fffeee0060/47e94fc253063043/54ec4b95" id="W4704165422de6aac482413fffeee0060" height="415" width="200"><param value="http://widgets.clearspring.com/o/4704165422de6aac/482413fffeee0060/47e94fc253063043/54ec4b95" name="movie"/><param value="transparent" name="wmode"><param value="all" name="allowNetworking"><param value="always" name="allowScriptAccess"></object>
+</script>
 </body>
 </html>
